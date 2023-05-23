@@ -6,18 +6,23 @@ const filteredPlayersResult = (scores) => {
   return scores.filter(score => score > 7)
 }
 
-const outstandingPlayers = (scores, players) => {
-  const outstandingScores = filteredPlayersResult(scores)
-  return players.filter((_, index) => outstandingScores.includes(scores[index]))
-}
-
 const removeOutstandingScores = (scores) => {
   return scores.filter(score => score <= 7)
 }
 
+const outstandingPlayers = (scores, players) => {
+  const outstandingScores = filteredPlayersResult(scores)
+  const outstandingScoresFiltered = players.filter((_, index) => outstandingScores.includes(scores[index]))
+
+  return outstandingScoresFiltered
+}
+
+
 const regularPlayers = (scores, players) => {
   const regularScores = removeOutstandingScores(scores)
-  return players.filter((_, index) => regularScores.includes(scores[index]))
+  const regularScoresFiltered = players.filter((_, index) => regularScores.includes(scores[index]))
+
+  return regularScoresFiltered
 }
 // 
 // 
