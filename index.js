@@ -6,6 +6,14 @@ const filteredPlayersResult = (scores) => {
   return scores.filter(score => score > 7)
 }
 
+const outstandingPlayers = (scores, players) => {
+  const outstandingScores = filteredPlayersResult(scores)
+  return players.filter((_, index) => outstandingScores.includes(scores[index]))
+}
+
+const removeOutstandingScores = (scores) => {
+  return scores.filter(score => score <= 7)
+}
 // 
 // 
 // function evalPerformance(scores, players) {
