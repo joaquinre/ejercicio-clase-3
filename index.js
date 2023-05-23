@@ -23,11 +23,19 @@ const regularPlayers = (scores, players) => {
   .filter((_, index) => regularScores
   .includes(scores[index]))
 }
-// 
-// 
-// function evalPerformance(scores, players) {
-  // const outstandingPlayers = 
-  // const regularPlayers =
-// }
+
+function evalPerformance(scores, players) {
+  const getOutstandingScores = filteredPlayersResult(scores)
+  const getOutstandingPlayers = outstandingPlayers(scores, players)
+  const getRegularPlayers = regularPlayers(scores, players)
+  const getRegularScores = removeOutstandingScores(scores)
+
+  return {
+    getOutstandingScores,
+    getOutstandingPlayers,
+    getRegularPlayers,
+    getRegularScores,
+  }
+}
 
 
