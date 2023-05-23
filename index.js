@@ -1,5 +1,5 @@
 const scores = [6, 9.3, 4.5, 8, 9]
-const players = ['Alvarez', 'Martinez', 'Molina', 'De Paul']
+const players = ['Alvarez', 'Martinez', 'Molina', 'De Paul', 'Paredes']
 
 // filtrar puntaje mayor a 7
 const filteredPlayersResult = (scores) => {
@@ -38,7 +38,9 @@ function evalPerformance(scores, players) {
   }
 }
 
-console.log('OutStanding Scores:', evalPerformance.getOutstandingScores(scores));
-console.log('OutStanding Playes:', evalPerformance.getOutstandingPlayers(scores, players));
-console.log('Regular Scores:', evalPerformance.getRegularScores(scores));
-console.log('Regular Players:', evalPerformance.getRegularPlayers(scores, players));
+const performance = evalPerformance(scores, players) 
+
+console.log('OutStanding Scores:', performance.getOutstandingScores);
+console.log('OutStanding Playes:', performance.getOutstandingPlayers);
+console.log('Regular Scores:', performance.getRegularScores);
+console.log('Regular Players:', performance.getRegularPlayers);
