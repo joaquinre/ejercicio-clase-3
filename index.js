@@ -38,4 +38,7 @@ function evalPerformance(scores, players) {
   }
 }
 
-
+console.log('OutStanding Scores:', evalPerformance.getOutstandingScores(scores));
+console.log('OutStanding Playes:', evalPerformance.getOutstandingPlayers(scores, players));
+console.log('Regular Scores:', evalPerformance.getRegularScores(scores));
+console.log('Regular Players:', evalPerformance.getRegularPlayers(scores, players));
